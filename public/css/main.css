@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+html, body{
+	background-color: #edeef0;
+	margin: 0px;
+	padding: 0px;
+}
+a{
+	text-decoration: none;
+}
+input {
+	outline:none;
+}
+/*Шапка*/
+nav{
+	background-color: #323232;
+}
+nav #logo{
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+}
+nav #logo span{
+	text-decoration: none;
+	font-size: 1.7em;
+	line-height: 45px;
+	margin-left: 40px;
+	font-family: 'Suez One', serif;
+}
+
+/*Контент*/
+@media (min-width: 1400px){
+	#content{
+		padding-right: 75px;
+		padding-left: 75px;
+	}
+}
+#link{
+	text-decoration: none;
+	color: black;
+}
+#link:hover{
+	color: #4286f4
+}
+#link1{
+	text-decoration: none;
+	color: white;
+}
+#link1:hover{
+	color: #59e9df
+}
+/* Вопросы и ответы */
+
+#faq-main {
+	background-color: #e1eaf0;
+	width: 100%;
+	float: right;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+@media (min-width: 801px) {
+	#faq-main div {
+		width: 25%;
+		margin-left: 6%;
+		float: right;
+	}
+}
+
+@media (max-width: 800px) {
+	#faq-main div {
+		width: 80%;
+		margin-left: 10%;
+		float: right;
+	}
+}
+#faq-main .title {
+	font-weight: lighter;
+	color: #4f4f4f;
+	margin-bottom: 20px;
+	font-size: 2.2em;
+}
+/* Слайдер */
+.card{
+	background-color: #24344f;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+	height: 75px;
+	width: 75px;
+}
+#q{
+	margin-right: 10px;
+}
+/*Search*/
+.search-box{
+	background: #2f3640;
+	height: 40px;
+	border-radius: 40px;
+	padding: 15px;
+}
+.search-box:hover > .search-txt{
+	width: 240px;
+}
+.search-box:hover > .search-btn{
+	background: white;
+}
+.search-btn{
+	color: #e84118;
+	float: right;
+	width: 30px;
+	height: 30px;
+	margin: -10px;
+	border-radius: 50%;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.search-txt{
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 16px;
+	transition: 0.4s;
+	margin: -6px;
+	width: 0px;
+}
+/*login*/
+.box{
+	font-size: 20px;
+	width: 300px;
+	position: absolute;
+	background: #191919;
+	text-align: center;
+	border-radius: 24px;
+}
+.box input[type = "text"], .box input[type = "password"], .box input[type="email"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+}
+.box input[type = "text"]:focus, .box input[type = "password"]:focus , .box input[type="email"]:focus{
+	border-color: #2ecc71;
+}
+.box h1{
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.box input[type = "submit"]{
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+	background: #2ecc71;
+	border-color: #2ecc71;
+}
+#brm{
+	width: 100%;
+}
+#btn{
+	font-size: 20px;
+	position: relative;
+	text-decoration: none;
+	border: 0;
+	background: none;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+#btn:hover {
+	background: #3498db;
+	border-color: #3498db;
+	color: white;
+}
+#canvas-basic {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+#reg_notifice{
+	position: relative;
+	z-index: 2;
+}
+#box_registration{
+	position: relative;
+	margin:1% auto;
+	margin-bottom: 0%;
+	text-align: center;
+	padding: 14px 40px;
+	z-index: 1;
+}
+.box-settings{
+	font-size: 20px;
+	text-align: center;
+}
+.box-settings input[type = "submit"]{
+	width: 275px;
+}
+.box-settings input[type = "text"], .box-settings input[type = "password"], .box-settings input[type="email"], .box-settings button {
+	width: 275px;
+	border: 0;
+	background: none;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	outline: none;
+	border-radius: 24px;
+}
+.box-settings input[type = "text"]:focus, .box-settings input[type = "password"]:focus, .box-settings input[type="email"]:focus {
+	border-color: #2ecc71;
+}
+
+.box-comment{
+	font-size: 20px;
+	text-align: center;
+	border-radius: 24px;
+}
+.box-comment input[type = "text"]{
+	width: 75%;
+	border: 0;
+	background: none;
+	margin: 20px auto;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	outline: none;
+	border-radius: 24px;
+}
+.box-comment button{
+	border: 0;
+	background: none;
+	text-align: center;
+	border: 2px solid #3498db;
+	outline: none;
+	width: 60px;
+	height: 60px;
+	border-radius: 34px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.box-comment button:hover{
+	color: white;
+	background: #2ecc71;
+	border-color: #2ecc71;
+}
+#comment {
+	display: flex;
+	background: none;
+	margin: 20px auto;
+}
+#comment1 {
+	width: 90%;
+	border: 0;
+	background: none;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	border-radius: 24px;
+}
+#avatar_img{
+	border-radius: 50px;
+	max-width: 50px;
+	max-height: 50px;
+	margin-right: 5px;
+}
+
+
+/* Блок с новостями */
+
+#main {
+	padding: 0% 10%;
+	float: left;
+	color: #484848;
+	font-size: 20px;
+}
+
+@media (min-width: 1401px) {
+	#index_img{
+		max-width: 60%;
+		max-height: 60%;
+	}
+}
+
+@media (max-width: 1400px) {
+	#index_img{
+		max-width: 60%;
+		max-height: 60%;
+	}
+}
+
+@media (max-width: 700px) {
+	#main div {
+		width: 98%!important;
+		margin-bottom: 20px;
+	}
+	#index_img{
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+#main div {
+	width: 45%;
+	margin-right: 2%;
+	float: left;
+	padding-bottom: 50px;
+}
+#name{
+	color: #484848;
+	font-size: 30px;
+}
+
+@media (max-width: 575px){
+	#carousel{
+		visibility: hidden;
+		display: none;
+	}
+}
+@media (min-width: 576px){
+	#carousel2{
+		visibility: hidden;
+		display: none;
+	}
+}
+
+/* about*/
+
+#faq{
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+@media (min-width: 801px) {
+	#faq {
+		width: 100%;
+		float: left;
+	}
+	#faq div {
+		width: 25%;
+		margin-left: 6%;
+		float: left;
+	}
+}
+
+@media (max-width: 800px) {
+	#faq div {
+		width: 80%;
+		margin-left: 10%;
+		float: left;
+	}
+}
+
+#faq .title {
+	font-weight: lighter;
+	color: #a3a0ad;
+	margin-bottom: 20px;
+	font-size: 2.2em;
+}
+
+#faq .heading {
+	color: #7d7d7d;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+#faq p {
+	font-family: Arimo, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	color: #4a4a4a;
+	font-size: 0.95em;
+	margin-bottom: 40px;
+}
+
+/* search */
+
+#genre {
+	font-size: 12px;
+	width: 200px;
+	transition: 0.25s;
+	background: none;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	outline: none;
+	border-radius: 24px;
+	color: white;
+}
+
+#genre:hover {
+	background: #3498db;
+	border-color: #3498db;
+	color: white;
+}
+
+@media (max-width: 451px) {
+	#genre{
+		width: 49%;
+	}
+}
+
+#genre-bar {
+	margin: 10%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#genre-btn {
+	background: #34495e;
+	font-size: 30px;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	color: white;
+}
+
+#genre-btn:hover {
+	background:#2c3e50;
+}
+
+#vipad{
+	background: #34495e;
+}

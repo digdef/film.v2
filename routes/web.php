@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainPageController@index');
+
+Route::get('/film/{id}', 'MainPageController@filmPage');

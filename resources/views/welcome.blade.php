@@ -23,13 +23,13 @@
     <div style="margin-left: 5%" class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav " id="about">
             <li class="nav-item ">
-                <a href="index.php" class="nav-link">Главная</a>
+                <a href="/" class="nav-link">Главная</a>
             </li>
             <li class="nav-item">
-                <a href="account.php" class="nav-link">Аккаунт</a>
+                <a href="/account/" class="nav-link">Аккаунт</a>
             </li>
             <li class="nav-item">
-                <a href="search.php" class="nav-link">Поиск</a>
+                <a href="/search/" class="nav-link">Поиск</a>
             </li>
         </ul>
         <div class=" mx-auto"></div>
@@ -241,12 +241,14 @@
 <div style="padding-top: 20px">
     <div class="container-fluid" id="content">
         <div class="row text-center ">
+            @foreach($films as $film)
             <div class="col-xs-2 col-sm-4 col-lg-3 col-xl-2 tile-img">
-                <a href="" id="link">
-                    <img src="img/1.jpg" class="w-100">
-                    <h3>Film</h3>
+                <a href="film/{{ $film->id }}" id="link">
+                    <img src="img/{{ $film->img }}" class="w-100">
+                    <h3>{{ $film->title }}</h3>
                 </a>
             </div>
+             @endforeach
         </div>
     </div>
 </div>

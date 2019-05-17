@@ -26,10 +26,10 @@
                 <a href="/" class="nav-link">Главная</a>
             </li>
             <li class="nav-item">
-                <a href="/account/" class="nav-link">Аккаунт</a>
+                <a href="/home" class="nav-link">Аккаунт</a>
             </li>
             <li class="nav-item">
-                <a href="/search/" class="nav-link">Поиск</a>
+                <a href="/search" class="nav-link">Поиск</a>
             </li>
         </ul>
         <div class=" mx-auto"></div>

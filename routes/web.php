@@ -14,3 +14,7 @@
 Route::get('/', 'MainPageController@index');
 
 Route::get('/film/{id}', 'MainPageController@filmPage');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

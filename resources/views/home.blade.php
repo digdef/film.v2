@@ -9,10 +9,7 @@
             <img style="min-width: 210" id="index_img"  src="img/avatar/"></p>
             <button class="btn btn-primary" name="name" data-toggle="modal" data-target="#exampleModal">
                 Изменить Аватрар
-            </button>
-            <a class="btn btn-primary" href='includes\exit.php'>
-                <i class="fas fa-sign-out-alt"></i>
-            </a></p>
+            </button></p>
             <input class="btn btn-primary" type="submit" name="do_signup" value="Подписки" data-toggle="modal" data-target="#exampleModal2">
         </div>
         <div class="text">
@@ -22,17 +19,18 @@
 				</span></p>
 
             <div>
-                <form class="box-settings" action="account.php" method="POST">
-                    <h2>Настройки</h2>
-                    <input type="text" name="name" placeholder="Изменить Имя" value="<? echo @$data['name'] ?>">
-                    <input id="btn" type="submit" name="update_name" value="Изменить">
+                <h3 style="text-align: center">Изменить Пароль</h3>
+                <form id="form-change-password" role="form" method="POST" action="{{ url('/user/credentials') }}" novalidate class="box-settings">
 
-                    <input type="email" name="email" placeholder="Изменить Email" value="<? echo @$data['email'] ?>">
-                    <input id="btn" type="submit" name="update_email" value="Изменить">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="password" id="current-password" name="current-password" placeholder="Старый Пароль">
 
-                    <input minlength="7" type="password" name="password" placeholder="Изменить Пароль" value="<? echo @$data['password'] ?>">
-                    <input minlength="7" type="password" name="password_2" placeholder="Подтвердите Пароль" value="<? echo @$data['password_2'] ?>"><br>
+                    <input type="password" id="password" name="password" placeholder="Новый Пароль">
+
+                    <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Подтвердите Пароль">
+
                     <input id="btn"  type="submit" name="update_password" value="Изменить">
+
                 </form>
             </div>
         </div>

@@ -26,10 +26,10 @@
 				<a href="/" class="nav-link">Главная</a>
 			</li>
 			<li class="nav-item">
-				<a href="../account/" class="nav-link">Аккаунт</a>
+				<a href="../home" class="nav-link">Аккаунт</a>
 			</li>
 			<li class="nav-item">
-				<a href="../search/" class="nav-link">Поиск</a>
+				<a href="../search" class="nav-link">Поиск</a>
 			</li>
 		</ul>
 		<div class=" mx-auto"></div>
@@ -75,7 +75,42 @@
 			</div>
 		</article>
 	</div>
+	<div class="container">
 
+		<div class="box-comment">
+			<form action="" method="POST">
+				<input type="text" name="text" placeholder="Комментарий">
+				<button type="submit" name="add_comment"><i class="far fa-paper-plane"></i></button>			
+			</form>
+		</div>
+
+		<div class="container" style="display: inline-block;">
+
+			@if ($commentss) 
+			<div id="comment">
+				<div style="text-align: center; width: 100%" id="comment1">
+					<h3>Нет Комментариев!</h3>
+				</div>
+			</div>
+			@endif
+			
+			@foreach ($comments as $comment)
+	    
+			<div id="comment">
+				<div>
+					<div style="text-align: center;">
+						<span>{{ $comment->nick }}</span>
+					</div>
+					<img id="avatar_img" src="../img/avatar/{{ $comment->avatar }}"></p>
+				</div>
+				<div id="comment1">
+					<span>{{ $comment->text }}</span>
+				</div>
+			</div>
+			@endforeach
+			
+		</div>
+	</div>
 	<footer id="faq-main">
 		<div>
 			<span class="title"><a id="link" href="includes/about.html">About</a></span><br>

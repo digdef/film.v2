@@ -6,7 +6,7 @@
 <div id="main">
     <article style="display: inline-block;">
         <div class="avatar">
-            <img style="min-width: 210" id="index_img"  src="img/avatar/"></p>
+            <img style="min-width: 210" id="index_img"  src="../img/avatar/{{ Auth::user()->avatar }}"></p>
             <button class="btn btn-primary" name="name" data-toggle="modal" data-target="#exampleModal">
                 Изменить Аватрар
             </button></p>

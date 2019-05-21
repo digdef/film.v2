@@ -21,8 +21,8 @@ class MainPageController extends Controller
         $id = $film->id;
 
         $comments = DB::select("SELECT * FROM `comments` WHERE `film_id` = ? ORDER BY `id` DESC", [$id]);
-        $commentss = count($comments) <= 0;
+        $count_comments = count($comments) <= 0;
 
-        return view('film', compact('film', 'comments', 'commentss'));
+        return view('film', compact('film', 'comments', 'count_comments'));
     }
 }

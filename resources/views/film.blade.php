@@ -42,7 +42,7 @@
 	</div>
 </nav>
 	<div style="text-align: center;">
-		<h2 class="p-5">{{ $film->title }}</h2>
+		<h2 style="padding-top: 10px">{{ $film->title }}</h2>
 	</div>
 	<!--<div class="container p-1">
 		<div class="embed-responsive embed-responsive-16by9">
@@ -54,11 +54,13 @@
 		<article style="display: inline-block;">
 			<div class="intro">
 				<img  id="index_img"  src="../img/{{ $film->img }}" ></p>
-				<div>
-					<form action="" method="POST">
-						<button type="submit" name="subscriptions" style="margin: 0px;" id="btn">Подписаться</button>
-					</form>
-				</div>
+				@if(\Auth::check())
+					<div>
+						<form action="" method="POST">
+							<button type="submit" name="subscriptions" style="margin: 0px;" id="btn">Подписаться</button>
+						</form>
+					</div>
+				@endif
 			</div>
 			<div class="text">
 				<span>
@@ -67,7 +69,7 @@
 			</div>
 			<div class="text">
 				<span>
-					Дата выхода: 
+					Дата выхода:
 
 					Жанр:
 
@@ -77,36 +79,39 @@
 	</div>
 	<div class="container">
 
-		<div class="box-comment">
-			<form action="" method="POST">
-				<input type="text" name="text" placeholder="Комментарий">
-				<button type="submit" name="add_comment"><i class="far fa-paper-plane"></i></button>			
-			</form>
-		</div>
+		@if(\Auth::check())
+			<div class="box-comment">
+				<form action="{!! route('comment.add') !!}" method="POST">
+					{!! csrf_field() !!}
+					<input type="hidden" value="{{ $film->id }}" name="film_id" placeholder="Комментарий">
+					<input type="text" name="text" placeholder="Комментарий">
+					<button type="submit" name="add_comment"><i class="far fa-paper-plane"></i></button>
+				</form>
+			</div>
+		@endif
 
 		<div class="container" style="display: inline-block;">
 
-			@if ($commentss) 
-			<div id="comment">
-				<div style="text-align: center; width: 100%" id="comment1">
-					<h3>Нет Комментариев!</h3>
-				</div>
-			</div>
-			@endif
-			
-			@foreach ($comments as $comment)
-	    
-			<div id="comment">
-				<div>
-					<div style="text-align: center;">
-						<span>{{ $comment->nick }}</span>
+			@if ($count_comments)
+				<div id="comment">
+					<div style="text-align: center; width: 100%" id="comment1">
+						<h3>Нет Комментариев!</h3>
 					</div>
-					<img id="avatar_img" src="../img/avatar/{{ $comment->avatar }}"></p>
 				</div>
-				<div id="comment1">
-					<span>{{ $comment->text }}</span>
-				</div>
-			</div>
+			@endif
+
+			@foreach ($comments as $comment)
+					<div id="comment">
+						<div>
+							<div style="text-align: center;">
+								<span>{{ $comment->nick }}</span>
+							</div>
+							<img id="avatar_img" src="../img/avatar/{{ $comment->avatar }}"></p>
+						</div>
+						<div id="comment1">
+							<span>{{ $comment->text }}</span>
+						</div>
+					</div>
 			@endforeach
 			
 		</div>

@@ -15,6 +15,9 @@ Route::get('/', 'MainPageController@index');
 
 Route::get('/film/{id}', 'MainPageController@filmPage');
 
+//Route::post('/film/{id}', 'MainPageController@filmPage');
+Route::post('/comments/add', 'CommentsController@addComment')->name('comment.add');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

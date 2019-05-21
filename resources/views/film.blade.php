@@ -56,8 +56,10 @@
 				<img  id="index_img"  src="../img/{{ $film->img }}" ></p>
 				@if(\Auth::check())
 					<div>
-						<form action="" method="POST">
-							<button type="submit" name="subscriptions" style="margin: 0px;" id="btn">Подписаться</button>
+						<form action="{!! route('subscription') !!}" method="POST">
+							{!! csrf_field() !!}
+							<input type="hidden" value="{{ $film->title }}" name="subscription" placeholder="Комментарий">
+							<button type="submit" style="margin: 0px;" id="btn">Подписаться</button>
 						</form>
 					</div>
 				@endif
@@ -70,7 +72,7 @@
 			<div class="text">
 				<span>
 					Дата выхода:
-
+					{{ $film->date }}<br>
 					Жанр:
 
 				</span>
@@ -85,7 +87,7 @@
 					{!! csrf_field() !!}
 					<input type="hidden" value="{{ $film->id }}" name="film_id" placeholder="Комментарий">
 					<input type="text" name="text" placeholder="Комментарий">
-					<button type="submit" name="add_comment"><i class="far fa-paper-plane"></i></button>
+					<button type="submit"><i class="far fa-paper-plane"></i></button>
 				</form>
 			</div>
 		@endif
@@ -123,7 +125,7 @@
 		<div>
 			<span class="title"><a id="link" href="includes/Holders.html">Holders</a></span><br>
 		</div>
-	</footer>			
+	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

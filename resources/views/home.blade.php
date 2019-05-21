@@ -4,7 +4,7 @@
 
 
 <div id="main">
-    <article style="display: inline-block;">
+    <article style="display: inline-block; padding-top: 10px">
         <div class="avatar">
             <img style="min-width: 210" id="index_img"  src="../img/avatar/{{ Auth::user()->avatar }}"></p>
             <button class="btn btn-primary" name="name" data-toggle="modal" data-target="#exampleModal">

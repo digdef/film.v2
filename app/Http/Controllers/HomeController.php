@@ -7,6 +7,7 @@ use Auth;
 use Validator;
 use App\User;
 use Hash;
+use DB;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $name = auth()->user()->name;
+
+        $subscriptions  = DB::select("SELECT * FROM `subscribes` WHERE `subscriber` = ?", [$name]);
+
+        return view('home', compact('subscriptions'));
     }
 
     public function admin_credential_rules(array $data)

@@ -61,14 +61,18 @@
         <div class="modal-content">
             <form id="brm" class="box" action="account.php" method="POST">
                 <h1>Подписки</h1>
-               <?/*
-                while ($sub=mysqli_fetch_array($subscriptions)){
-                $sub1=$sub['subscription'];
-                $film = mysqli_query($connection, "SELECT * FROM `film` WHERE `title`='$sub1' ORDER BY `id`");
-                $mov = mysqli_fetch_assoc($film);
-                ?>
-                <a id="link1" href="film.php?id=<?php echo $mov['id'];?>"><? echo $sub['subscription']?></a><br>
-                <? } */?>
+                @foreach($subscriptions as $subscription)
+                    <?php
+                    $sub = $subscription->subscription;
+                    $films = DB::select("SELECT * FROM `films` WHERE `title` = ? ORDER BY `id`", [$sub]);
+                    foreach ($films as $film) {
+                    ?>
+                        <a id="link1" href="film/{{ $film->id }} ">{{ $sub }}</a><br>
+                    <?php 
+                    }
+                    ?>
+
+                @endforeach
             </form>
         </div>
     </div>

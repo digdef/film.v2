@@ -452,3 +452,13 @@ nav #logo span{
 #vipad{
 	background: #34495e;
 }
+
+.pagination-link {
+	font-size: 25px;
+	color: #515966;
+	transition: 0.3s
+}
+
+.pagination-link:hover {
+	color: #59e9df;
+}

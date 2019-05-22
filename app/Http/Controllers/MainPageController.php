@@ -10,7 +10,7 @@ class MainPageController extends Controller
 {
     public function index()
     {
-        $films = App\Film::all();
+        $films = App\Film::paginate(12);
         return view('welcome', compact('films'));
     }
 

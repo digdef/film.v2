@@ -68,7 +68,7 @@
                     foreach ($films as $film) {
                     ?>
                         <a id="link1" href="film/{{ $film->id }} ">{{ $sub }}</a><br>
-                    <?php 
+                    <?php
                     }
                     ?>
 

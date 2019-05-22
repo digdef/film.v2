@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/user/credentials','HomeController@postCredentials');
+
+Route::post('/search','Search@index');

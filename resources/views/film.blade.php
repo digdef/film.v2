@@ -74,7 +74,21 @@
 					Дата выхода:
 					{{ $film->date }}<br>
 					Жанр:
+					<?php
 
+                    $genre = DB::select("SELECT * FROM `genre` WHERE `film` = ? ", [$film->title]);
+
+                    foreach ($genre as $gnr) {
+                        $categories = DB::select("SELECT * FROM `categories` WHERE `categories` = ? ", [$gnr->categories]);
+                        foreach ($categories as $cat) {
+                            ?>
+                            <a href="categories/{{ $cat->id }}" id="link">
+								{{ $cat->categories }}
+                            </a>
+							<?
+						}
+                    }
+					?>
 				</span>
 			</div>
 		</article>

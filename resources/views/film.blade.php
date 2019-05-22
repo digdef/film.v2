@@ -53,7 +53,7 @@
 	<div style="padding-top: 2%" id="main">
 		<article style="display: inline-block;">
 			<div class="intro">
-				<img  id="index_img"  src="../img/{{ $film->img }}" ></p>
+				<img  id="index_img"  src={!! URL::asset('img/'.$film->img ); !!} ></p>
 				@if(\Auth::check())
 					<div>
 						<form action="{!! route('subscription') !!}" method="POST">
@@ -122,7 +122,7 @@
 							<div style="text-align: center;">
 								<span>{{ $comment->nick }}</span>
 							</div>
-							<img id="avatar_img" src="../img/avatar/{{ $comment->avatar }}"></p>
+							<img id="avatar_img" src={!! URL::asset('img/avatar/'.$comment->avatar ); !!}></p>
 						</div>
 						<div id="comment1">
 							<span>{{ $comment->text }}</span>

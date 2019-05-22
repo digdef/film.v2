@@ -53,29 +53,20 @@
         </p>
     </div>
 </div>
-<?php
-if($reply == 'not_found') {
-    ?>
-    <div style="text-align: center"><h1 style="text-align: center">По вашему запросу ничего не найдено.</h1></div>
-    <?php
-}
-if ($reply == 'none') {
-    ?>
-    <div style="text-align: center"><h1>Задан пустой поисковый запрос.</h1></div>
-    <?php
-}
-?>
+
+
 <div style="padding-top: 20px">
     <div class="container-fluid" id="content">
         <div class="row text-center ">
             <?php
-            if ($reply == 'found'){
-                foreach ($result as $row) {
+            foreach ($genre as $gen) {
+                $films = DB::select("SELECT * FROM `films` WHERE `title` = ? ORDER BY `id`", [$gen->film]);
+                foreach($films as $film){
                     ?>
                     <div class="col-xs-2 col-sm-4 col-lg-3 col-xl-2 tile-img">
-                        <a href="film/{{ $row->id }}" id="link">
-                            <img src="img/{{ $row->img }}" class="w-100">
-                            <h3>{{ $row->title }}</h3>
+                        <a href="../film/{{ $film->id }}" id="link">
+                            <img src="../img/{{ $film->img }}" class="w-100">
+                            <h3>{{ $film->title }}</h3>
                         </a>
                     </div>
                 <?php
@@ -86,10 +77,10 @@ if ($reply == 'none') {
     </div>
 </div>
 
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script type="text/javascript" src={!! URL::asset('js/genre.js'); !!}></script>
 </body>
-</html>
 </html>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <canvas id="canvas-basic"></canvas>
     <div id="box_registration" class="box">
         @if (session('status'))
             <div class="alert alert-success" role="alert">

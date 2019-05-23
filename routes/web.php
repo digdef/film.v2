@@ -23,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/home', 'HomeController@update');
+
 Route::get('/categories/{id}', 'Search@categories');
 
 Route::post('/user/credentials','HomeController@postCredentials');

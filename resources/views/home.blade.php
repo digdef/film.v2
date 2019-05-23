@@ -39,7 +39,8 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form id="brm" class="box" action="account.php" method="POST">
+            <form id="brm" class="box" action="{{ url('/home') }}" method="POST">
+                {!! csrf_field() !!}
                 <h1>Изменить Аватар</h1>
                 <p>
                     <button class="btn btn-link" type="submit" name="do_avatar1">

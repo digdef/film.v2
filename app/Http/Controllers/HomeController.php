@@ -30,9 +30,28 @@ class HomeController extends Controller
     {
         $name = auth()->user()->name;
 
-        $subscriptions  = DB::select("SELECT * FROM `subscribes` WHERE `subscriber` = ?", [$name]);
+        $subscriptions  = DB::select("SELECT * FROM `subscribes` WHERE `subscriber` = ?", [$name]);      
 
         return view('home', compact('subscriptions'));
+    }
+
+    public function update()
+    {
+      $id = auth()->user()->id;
+
+      if (isset($_POST['do_avatar1'])) {
+        DB::update("UPDATE `users` SET `avatar` = 'avatar1.png' WHERE `users`.`id` = ?", [$id]);  
+      }
+
+      if (isset($_POST['do_avatar2'])) {
+        DB::update("UPDATE `users` SET `avatar` = 'avatar2.png' WHERE `users`.`id` = ?", [$id]);  
+      }
+
+      if (isset($_POST['do_avatar3'])) {
+        DB::update("UPDATE `users` SET `avatar` = 'avatar3.png' WHERE `users`.`id` = ?", [$id]);  
+      }
+
+      return back();
     }
 
     public function admin_credential_rules(array $data)

@@ -55,21 +55,22 @@
                 <div class="container-fluid ">
                     <div class="container p-5">
                         <div class="card-deck">
+                            <?php
+
+                            $carousel = array();
+
+                            foreach ($sliders as $slider) {
+                                $carousel[] = $slider;
+                            }
+                            for ($i = 0; $i < 3; $i++) {
+                                echo '
                             <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
+                                <a href="'.$carousel[$i]['link'].'">
+                                    <img src="img/slider/' . $carousel[$i]['img'] . '" class="card-img-top">
                                 </a>
-                            </div>
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
+                            </div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

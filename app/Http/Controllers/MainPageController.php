@@ -10,8 +10,10 @@ class MainPageController extends Controller
 {
     public function index()
     {
+        $sliders = DB::select("SELECT * FROM slider LIMIT 9");
+
         $films = App\Film::paginate(12);
-        return view('welcome', compact('films'));
+        return view('welcome', compact('films', 'sliders'));
     }
 
     public function filmPage($id)

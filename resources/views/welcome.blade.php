@@ -57,18 +57,31 @@
                         <div class="card-deck">
                             <?php
 
-                            $carousel = array();
-
-                            foreach ($sliders as $slider) {
-                                $carousel[] = $slider;
-                            }
                             for ($i = 0; $i < 3; $i++) {
                                 echo '
-                            <div class="card text-center">
-                                <a href="'.$carousel[$i]['link'].'">
-                                    <img src="img/slider/' . $carousel[$i]['img'] . '" class="card-img-top">
-                                </a>
-                            </div>';
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
+                            }  
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container-fluid ">
+                    <div class="container p-5">
+                        <div class="card-deck">
+                            <?
+                            for ($i = 3; $i < 6; $i++) {
+                                echo '
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
                             }
                             ?>
                         </div>
@@ -79,44 +92,16 @@
                 <div class="container-fluid ">
                     <div class="container p-5">
                         <div class="card-deck">
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container-fluid ">
-                    <div class="container p-5">
-                        <div class="card-deck">
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
+                            <?
+                            for ($i = 6; $i < 9; $i++) {
+                                echo '
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -149,11 +134,16 @@
                 <div class="container-fluid ">
                     <div class="container p-5">
                         <div class="card-deck">
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
+                            <?
+                            for ($i = 0; $i < 1; $i++) {
+                                echo '
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -163,11 +153,16 @@
                 <div class="container-fluid ">
                     <div class="container p-5">
                         <div class="card-deck">
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
+                            <?
+                            for ($i = 1; $i < 2;$i++) {
+                                echo '
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -177,11 +172,16 @@
                 <div class="container-fluid ">
                     <div class="container p-5">
                         <div class="card-deck">
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
+                            <?
+                            for ($i = 2; $i < 3; $i++) {
+                                echo '
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -191,11 +191,16 @@
                 <div class="container-fluid ">
                     <div class="container p-5">
                         <div class="card-deck">
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
+                            <?
+                            for ($i = 3; $i < 4; $i++) {
+                                echo '
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -205,11 +210,16 @@
                 <div class="container-fluid ">
                     <div class="container p-5">
                         <div class="card-deck">
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
+                            <?
+                            for ($i = 4; $i < 5; $i++) {
+                                echo '
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -218,12 +228,16 @@
             <div class="carousel-item">
                 <div class="container-fluid ">
                     <div class="container p-5">
-                        <div class="card-deck">
-                            <div class="card text-center">
-                                <a href="">
-                                    <img src="img/slider/1.png" class="card-img-top">
-                                </a>
-                            </div>
+                            <?
+                            for ($i = 5; $i < 6; $i++) {
+                                echo '
+                                <div class="card text-center">
+                                    <a href="'.$carousel[$i]->link.'">
+                                        <img src="img/slider/' . $carousel[$i]->img . '" class="card-img-top">
+                                    </a>
+                                </div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

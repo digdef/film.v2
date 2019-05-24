@@ -11,9 +11,14 @@ class MainPageController extends Controller
     public function index()
     {
         $sliders = DB::select("SELECT * FROM slider LIMIT 9");
+        $carousel = array();
+
+        foreach ($sliders as $r) {
+            $carousel[] = $r;
+        }
 
         $films = App\Film::paginate(12);
-        return view('welcome', compact('films', 'sliders'));
+        return view('welcome', compact('films', 'carousel'));
     }
 
     public function filmPage($id)
